@@ -3,9 +3,299 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>CSS Box Model Practice Problems</title>
+    <style>
+        
+        h1{
+            color: blue;
+                 
+        }
+        .intro{
+            color: #64748b;
+        }
+        h2{
+            color: blueviolet;
+            border-bottom: 2px solid;
+            width: 550px;
+        }
+        .c1{
+            background-color: black;
+            color: white;
+            width: 300px;
+            border-radius: 10px;
+            padding: 10px;
+            margin-top: 10px;
+           
+        }
+        .d2{
+            background-color: #66e6953c;
+            padding: 10px;
+            border-left-color:green ;
+            border-radius: 10px;
+            border-left: 7px solid green;
+            margin-top: 10px;
+
+        }
+        .d1{
+            border-radius: 10px;
+            padding: 10px;
+            box-shadow: 5px 5px 5px 5px rgba(0,0,0,0.1);
+            width: 500px;
+            margin-bottom: 30px;
+        }
+        .sol{
+            border-top: 2px dashed rgba(0,0,0,0.1);
+            padding: 7px;     
+        }
+        
+    </style>
 </head>
 <body>
-    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus id assumenda maiores officiis temporibus tempora doloribus voluptatem incidunt, ducimus magni tenetur fugiat consectetur velit voluptate nisi! Reprehenderit commodi officiis aspernatur.</p>
+    <h1>CSS Box Model Quiz</h1>
+    <p class="intro"> Master padding, borders, and margins using<code>content-box</code> calculations and coding techniques. </p>
+    <h2>Part 1: Calculations & Concepts</h2>
+    <div class="d1">
+      <strong><p style="color: blue; "><span style="border-radius: 50%; background-color: blue; width: 52px;height: 52px; color: white; ">1</span> Total Width Calculation</p> </strong> 
+       <p> Calculate the <strong>total horizontal space </strong>occupied by this element:</p>
+       <pre class="c1" tabindex="0"><code><span style="color: green;">.box</span> {
+  <span style="color: #f92672;">width</span>: 300px;
+  <span style="color: #f92672;">padding</span>: 20px;
+  <span style="color: #f92672;">border</span>: 5px solid black;
+  <span style="color: #f92672;">margin</span>: 15px;
+ }
+</code></pre>
+<div class="sol">
+<details><summary>View Solution</summary>
+    <div class="d2">
+        <p >Total Width = 300px+(20px × 2) + (5px x 2) + (15px x 2)</p>
+        <p >300+40+10+30= 380px</p>
+        <p> <strong>Result:</strong>380px</p>
+    </div>
+</details>
+</div>
+    </div>
+
+    <div class="d1">
+     <strong><p style="color: blue; "><span style="border-radius: 80px 80px 80px 80px; background-color: blue; width: 52px;height: 52px; color: white; ">2</span>  Padding Shorthand</p> </strong> 
+     <p > If an element is styled with <code>padding: 10px 25px;,</code>  what are the specific values for each side?</p>
+    <div class="sol"><details><summary>View Solution</summary>
+    <div class="d2">
+        <ul>
+            <li><strong>Top & Bottom:</strong>10px</li>
+            <li><strong>Left & Right:</strong>25px</li>
+        </ul>
+    </div>
+</details>
+</div>
+    </div>
+     <div class="d1">
+     <strong><p style="color: blue; "><span style="border-radius: 80px 80px 80px 80px; background-color: blue; width: 52px;height: 52px; color: white; ">3</span>  Vertical Margin Collapse</p> </strong> 
+     <p > <strong>Box A</strong>  has <code>margin-bottom: 40px;.</code>(immediately below) has <code>margin-top: 25px;. </code>What is the actual vertical gap between them?</p>
+    <div class="sol"><details><summary>View Solution</summary>
+    <div class="d2">
+        <p>Due to margin collapse, the gap is equal to the maximum of the two adjacent margins:</p>
+        <p>Gap = max(40px, 25px) = 40px</p>
+    </div>
+</details>
+</div>
+    </div>
+<div class="d1">
+      <strong><p style="color: blue; "><span style="border-radius: 50%; background-color: blue; width: 52px;height: 52px; color: white; ">4</span> Total Height Calculation</p> </strong> 
+       <p>Calculate the<strong> total vertical space  </strong>occupied by this element:</p>
+       <pre class="c1" tabindex="0"><code><span style="color: green;">.box</span> {
+        ol>li*9
+ <span style="color: #f92672;"> height</span>: 150px;
+  <span style="color: #f92672;">padding-top</span>: 10px;
+  <span style="color: #f92672;">padding-bottom</span>: 30px;
+  <span style="color: #f92672;">border-top</span>: 2px solid red;
+  <span style="color: #f92672;">border-bottom</span>: 0px;
+  <span style="color: #f92672;">margin-top</span>: 20px;
+  <span style="color: #f92672;">margin-bottom</span>: 20px;
+ }
+</code></pre>
+<div class="sol">
+<details><summary>View Solution</summary>
+    <div class="d2">
+        <p >Total Height =  150px+10px+30px+2px+0px+20px+20px </p>
+       
+        <p> <strong>Result:</strong>232px</p>
+    </div>
+</details>
+</div>
+    </div>
+     <div class="d1">
+     <strong><p style="color: blue; "><span style="border-radius: 80px 80px 80px 80px; background-color: blue; width: 52px;height: 52px; color: white; ">5</span> Border Shorthand Identification</p> </strong> 
+     <p > If an element is styled with 20px <code>: border-width: 5px 10px 15px 20px;?</code> </p>
+    <div class="sol">
+        <details><summary>View Solution</summary>
+            <div class="d2">
+    <p>Order: Top (5px), Right (10px), Bottom (15px), <strong>Left (20px)</strong>.</p>
+</details></div>
+    </div>
+ </div>
+     <div class="d1">
+     <strong><p style="color: blue; "><span style="border-radius: 80px 80px 80px 80px; background-color: blue; width: 52px;height: 52px; color: white; ">6</span>  Negative Margins</p> </strong> 
+     <p >If an element has  <code>margin-left: -30px;,</code> in which direction does the element move?</p>
+    <div class="sol"><details><summary>View Solution</summary>
+        <div class="d2">
+    <p>The element is pulled 30px
+ to the <strong>left</strong> (potentially overlapping the container or previous siblings).</p>
+</details>
+</div>
+    </div>
+     </div>
+     <div class="d1">
+     <strong><p style="color: blue; "><span style="border-radius: 80px 80px 80px 80px; background-color: blue; width: 52px;height: 52px; color: white; ">7</span> Padding vs Margin</p> </strong> 
+     <p > Which layer is located <strong>inside</strong> the border and shows the background color? </p>
+    <div class="sol"><details><summary>View Solution</summary>
+        <div class="d2">
+    <p><strong>Padding</strong>.</p>
+</details>
+</div></div>
+    </div>
+<div class="d1">
+     <strong><p style="color: blue; "><span style="border-radius: 80px 80px 80px 80px; background-color: blue; width: 52px;height: 52px; color: white; ">8</span> Centering</p> </strong> 
+     <p > What property value pair is used for centering a block element horizontally? </p>
+    <div class="sol"><details><summary>View Solution</summary>
+        <div class="d2">
+    <p><code>margin: 0 auto;</code></p>
+</details>
+</div></div>
+    </div>
+    <div class="d1">
+     <strong><p style="color: blue; "><span style="border-radius: 80px 80px 80px 80px; background-color: blue; width: 52px;height: 52px; color: white; ">9</span> Percentage Padding</p> </strong> 
+     <p > Padding percentages are relative to what property of the parent?</p>
+    <div class="sol"><details><summary>View Solution</summary>
+        <div class="d2">
+    <p>The <strong>Width</strong>of the parent container.</p>
+</details>
+</div></div>
+<div class="d1">
+     <strong><p style="color: blue; "><span style="border-radius: 80px 80px 80px 80px; background-color: blue; width: 52px;height: 52px; color: white; ">10</span> Layer Order</p> </strong> 
+     <p >List the box model parts from innermost to outermost.</p>
+    <div class="sol"><details><summary>View Solution</summary>
+        <div class="d2">
+    <p>Content → Padding → Border → Margin.</p>
+</details>
+</div></div>
+
+<h2>Part 2: Writing CSS</h2>
+<div class="d1">
+     <strong><p style="color: blue; "><span style="border-radius: 80px 80px 80px 80px; background-color: blue; width: 52px;height: 52px; color: white; ">11</span> Shorthand Border</p> </strong> 
+     <p >Write a single line of CSS for a 3px
+ dashed blue border on all sides.</p>
+    <div class="sol"><details><summary>View Solution</summary>
+        <div class="d2">
+        <div class="c1">
+      <code><span style="color: #f92672;">border</span>: 5px solid black;</code>
+
+</details></div>
+</div></div>
+<div class="d1">
+     <strong><p style="color: blue; "><span style="border-radius: 80px 80px 80px 80px; background-color: blue; width: 52px;height: 52px; color: white; ">12</span> Specific Padding</p> </strong> 
+     <p >Write padding for: Top 20px, Right 10px, Bottom 5px, Left 0.</p>
+    <div class="sol"><details><summary>View Solution</summary>
+        <div class="d2">
+        <div class="c1">
+     <code> <span style="color: #f92672;">padding</span>: 20px 10px 5px 0;</code>
+
+</details></div>
+</div></div>
+
+<div class="d1">
+     <strong><p style="color: blue; "><span style="border-radius: 80px 80px 80px 80px; background-color: blue; width: 52px;height: 52px; color: white; ">13</span> Top Border Only</p> </strong> 
+     <p >Set a solid red 4px
+ border only on the top side.</p>
+    <div class="sol"><details><summary>View Solution</summary>
+        <div class="d2">
+        <div class="c1">
+     <code><span style="color: #f92672;">border-top</span>: 5px solid red;</div>
+</code> 
+</details>
+</div></div>
+
+<div class="d1">
+     <strong><p style="color: blue; "><span style="border-radius: 80px 80px 80px 80px; background-color: blue; width: 52px;height: 52px; color: white; ">14</span> Mirror Margins</p> </strong> 
+     <p >Set top/bottom margins to 50px and left/right to 0 using 2 values.</p>
+    <div class="sol"><details><summary>View Solution</summary>
+        <div class="d2">
+        <div class="c1">
+    <code> <span style="color: #f92672;">margin</span>: 50px 0;
+</code> 
+</details></div>
+</div></div>
+
+<div class="d1">
+     <strong><p style="color: blue; "><span style="border-radius: 80px 80px 80px 80px; background-color: blue; width: 52px;height: 52px; color: white; ">15</span> Global Reset</p> </strong> 
+     <p >Remove margins and padding from the <code>body</code>.</p>
+    <div class="sol"><details><summary>View Solution</summary>
+        <div class="d2">
+       <pre class="c1" tabindex="0"><code><span style="color: green;">body </code></span> {  
+    <span style="color: #f92672;">margin</span>: 0;
+    <span style="color: #f92672;">padding</span>: 0;
+ }
+</details></div>
+</div></div>
+
+<div class="d1">
+     <strong><p style="color: blue; "><span style="border-radius: 80px 80px 80px 80px; background-color: blue; width: 52px;height: 52px; color: white; ">16</span>  3-Value Margin Shorthand</p> </strong> 
+     <p >Write the margin shorthand for the following specifications:</p>
+     <ul>
+        <li>Top: 10px</li>
+        <li>Left & Right: 20px</li>
+        <li>Bottom: 30px</li>
+     </ul>
+    <div class="sol"><details><summary>View Solution</summary>
+        <div class="d2">
+        <div class="c1">
+      <code><span style="color: #f92672;">margin</span>: 10px 20px 30px;</code><p></p>
+<i>Note: The 3-value shorthand follows the order: </i>
+</details></div>
+</div></div>
+
+<div class="d1">
+     <strong><p style="color: blue; "><span style="border-radius: 80px 80px 80px 80px; background-color: blue; width: 52px;height: 52px; color: white; ">17</span> Bottom Border Style</p> </strong> 
+     <p >Make the bottom border a double line, 5px thick.</p>
+    <div class="sol"><details><summary>View Solution</summary>
+        <div class="d2">
+        <div class="c1">
+     <code> <span style="color: #f92672;">border-bottom</span>: 5px double;</div></code>
+
+</details>
+</div></div>
+
+<div class="d1">
+     <strong><p style="color: blue; "><span style="border-radius: 80px 80px 80px 80px; background-color: blue; width: 52px;height: 52px; color: white; ">18</span> External Spacing</p> </strong> 
+     <p >Add 15px of space <strong>between </strong> adjacent elements.</p>
+    <div class="sol"><details><summary>View Solution</summary>
+        <div class="d2">
+        <div class="c1">
+    <code> <span style="color: #f92672;">margin</span>: 15px;
+</code> 
+</details></div>
+</div></div>
+
+<div class="d1">
+     <strong><p style="color: blue; "><span style="border-radius: 80px 80px 80px 80px; background-color: blue; width: 52px;height: 52px; color: white; ">19</span> Inner Gutter</p> </strong> 
+     <p >Create 10px of space inside a container's border.</p>
+    <div class="sol"><details><summary>View Solution</summary>
+        <div class="d2">
+        <div class="c1">
+    <code> <span style="color: #f92672;">padding</span>: 10px;
+</code> 
+</details></div>
+</div></div>
+
+<div class="d1">
+     <strong><p style="color: blue; "><span style="border-radius: 80px 80px 80px 80px; background-color: blue; width: 52px;height: 52px; color: white; ">20</span> Invisible Border</p> </strong> 
+     <p >Create 10px solid border that is transparent.</p>
+    <div class="sol"><details><summary>View Solution</summary>
+        <div class="d2">
+        <div class="c1">
+    <code> <span style="color: #f92672;">border</span>: 10px solid transparent;
+</code> 
+</details></div>
+</div></div>
+
 </body>
-</html>
+
